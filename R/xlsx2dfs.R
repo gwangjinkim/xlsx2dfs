@@ -21,6 +21,7 @@ library(openxlsx)
 #' dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
 #' # read created file
 #' dfs <- xlsx2dfs("testout.xlsx")
+#' file.remove("testout.xlsx")
 #' @export
 xlsx2dfs <- function(xlsxPath, rowNames = TRUE, colNames = TRUE, ...) {
   wb <- openxlsx::loadWorkbook(xlsxPath)
@@ -45,6 +46,7 @@ xlsx2dfs <- function(xlsxPath, rowNames = TRUE, colNames = TRUE, ...) {
 #' df1 <- data.frame(A=c(1, 2), B=c(3, 4))
 #' df2 <- data.frame(C=c(5, 6), D=c(7, 8))
 #' dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
+#' file.remove("testout.xlsx")
 #' @export
 withNames <- function(...) {
   p.l <- list(...)
@@ -72,6 +74,7 @@ withNames <- function(...) {
 #' df1 <- data.frame(A=c(1, 2), B=c(3, 4))
 #' df2 <- data.frame(C=c(5, 6), D=c(7, 8))
 #' dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
+#' file.remove("testout.xlsx")
 #' @export
 dfs2xlsx <- function(dfs, fpath, rowNames=TRUE, colNames=TRUE) {
   wb <- createWorkbook()

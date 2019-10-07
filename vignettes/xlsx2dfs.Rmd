@@ -1,10 +1,10 @@
 ---
-title: "xlsx2dfs: reading Excel file sheets to list of data frames and vice versa"
+title: "xlsx2dfs: Reading/Writing Excel File Sheets from/to List of Data Frames"
 author: "Gwang-Jin Kim"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{"xlsx2dfs: Reading/Writing Excel File Sheets from/to List of Data Frames"}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
