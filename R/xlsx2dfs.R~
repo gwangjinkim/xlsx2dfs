@@ -1,6 +1,6 @@
 #####################################################################
 
-library(openxlsx)
+require(openxlsx)
 
 #####################################################################
 # read xlsx files to dfs list
@@ -13,7 +13,6 @@ library(openxlsx)
 #' @param colNames Whether to read-in column names, a boolean.
 #' @param ... ... passed to read.xlsx function in the openxlsx package.
 #' @return A list of data frames, each representing a sheet in the Excel file (sheet names are list element names).
-#' @import openxlsx
 #' @examples
 #' # create example file
 #' df1 <- data.frame(A=c(1, 2), B=c(3, 4))
@@ -67,7 +66,6 @@ withNames <- function(...) {
 #' @param rowNames A boolean indicating whether the first column of a table in every sheet contains row names of the table.
 #' @param colNames A boolean indicating whether the first line of a table in every sheet contains a header.
 #' @return Nothing. Writes out data frames into specified Excel file.
-#' @import openxlsx
 #' @examples
 #' df1 <- data.frame(A=c(1, 2), B=c(3, 4))
 #' df2 <- data.frame(C=c(5, 6), D=c(7, 8))
