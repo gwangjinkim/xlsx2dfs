@@ -18,5 +18,5 @@ Helper function for more convenient input (sheet name, data frame, sheet name, d
 \examples{
 df1 <- data.frame(A=c(1, 2), B=c(3, 4))
 df2 <- data.frame(C=c(5, 6), D=c(7, 8))
-dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "../inst/extdata/testout.xlsx")
+dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
 }

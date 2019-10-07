@@ -3,3 +3,4 @@
 export(dfs2xlsx)
 export(withNames)
 export(xlsx2dfs)
+import(openxlsx)
