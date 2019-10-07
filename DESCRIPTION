@@ -1,10 +1,10 @@
 Package: xlsx2dfs
 Type: Package
-Title: Read and write Excel Sheets into and from List of Data Frames
+Title: Read and Write Excel Sheets into and from List of Data Frames
 Version: 0.1.0
 Author: Gwang-Jin Kim
 Maintainer: Gwang-Jin Kim <gwang.jin.kim.phd@gmail.com>
-Description: Reading and writing Excel sheets of a single Excel file into and from a list of data frames. Eases I/O of tabular data in bioinformatics while keeping them in a human readable format.
+Description: Reading and writing sheets of a single Excel file into and from a list of data frames. Eases I/O of tabular data in bioinformatics while keeping them in a human readable format.
 Depends: openxlsx
 License: MIT + file LICENSE
 Encoding: UTF-8

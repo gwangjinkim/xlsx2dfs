@@ -28,4 +28,5 @@ df2 <- data.frame(C=c(5, 6), D=c(7, 8))
 dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
 # read created file
 dfs <- xlsx2dfs("testout.xlsx")
+file.remove("testout.xlsx")
 }
