@@ -25,8 +25,9 @@ Read-in Excel file (workbook) as a list of data frames.
 # create example file
 df1 <- data.frame(A=c(1, 2), B=c(3, 4))
 df2 <- data.frame(C=c(5, 6), D=c(7, 8))
-dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), "testout.xlsx")
+xlsx_fpath <- file.path(tempdir(), "testout.xlsx")
+dfs2xlsx(withNames("sheet1", df1, "sheet2", df2), xlsx_fpath)
 # read created file
-dfs <- xlsx2dfs("testout.xlsx")
-file.remove("testout.xlsx")
+dfs <- xlsx2dfs(xlsx_fpath)
+file.remove(xlsx_fpath)
 }
