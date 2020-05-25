@@ -1,6 +1,6 @@
 * xlsx2dfs
 
-Read and Write 'Excel' Sheets into and from List of Data Frames
+xlsx2dfs: Reading/Writing Excel File Sheets from/to List of Data Frames
 
 This is the official repository of my first R package `xlsx2dfs` which I uploaded to CRAN.
 
@@ -15,3 +15,52 @@ or:
 #+BEGIN_SRC R
   devtools::install_github("gwangjinkim/xlsx2dfs")
 #+END_SRC
+
+In case of the error:
+#+BEGIN_SRC R
+  ## sh: 1: /bin/gtar: not found
+#+END_SRC
+
+do:
+
+#+BEGIN_SRC R
+  Sys.setenv(TAR = "/bin/tar") # or wherever your TAR is - find out by: `$ which tar`
+  devtools::install_github("gwangjinkim/xlsx2dfs")
+#+END_SRC
+
+* Usage
+
+This package is a wrapper for `openxlsx`.
+It reads entire excel files with all their sheets into a list of data frames (one data frame for each sheet, one list of data frame for one excel file).
+For creating an excel file, put together all your data frames into a list and give them names for the sheet titles.
+The `withNames()` function helps during the input by making it possible to alternate name and data frame.
+
+#+BEGIN_SRC R
+library(xlsx2dfs)
+df1 <- data.frame(genes = c("gene1", "gene2"),
+                  count = c(23,  50))
+df2 <- data.frame(genes = c("gene3", "gene4"),
+                  count = c(100, 500))
+# write one data frame on one sheet
+dfs2xlsx(withNames("first sheet", df1), "../inst/extdata/test_one_df.xlsx")
+
+# write more data frames into one file
+dfs2xlsx(withNames("first data frame", df1,
+                   "second data frame", df2), "../inst/extdata/test_two_dfs.xlsx")
+
+# or create a data frame list with the desired names
+# and print into xlsx file
+df.list <- list(`first data frame`=df1,
+                `second data frame`=df2)
+# actually "withNames()" is superfluous ...
+dfs2xlsx(df.list, "../inst/extdata/test_two_dfs1.xlsx")
+
+# write one data frame into a file
+dfs2xlsx(list(`one data frame`=df1),
+         "../inst/extdata/one_df.xlsx")
+
+# read-in excel file as a data frame list
+dfs.list <- xlsx2dfs("../inst/extdata/test_two_dfs1.xlsx")
+#+END_SRC
+
+
