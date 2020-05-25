@@ -1,0 +1,17 @@
+* xlsx2dfs
+
+Read and Write 'Excel' Sheets into and from List of Data Frames
+
+This is the official repository of my first R package `xlsx2dfs` which I uploaded to CRAN.
+
+* Installation
+
+#+BEGIN_SRC R
+  install.packages("xlsx2dfs")
+#+END_SRC 
+
+or:
+
+#+BEGIN_SRC R
+  devtools::install_github("gwangjinkim/xlsx2dfs")
+#+END_SRC
