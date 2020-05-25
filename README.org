@@ -50,17 +50,17 @@ dfs2xlsx(withNames("first data frame", df1,
 
 # or create a data frame list with the desired names
 # and print into xlsx file
-df.list <- list(`first data frame`=df1,
-                `second data frame`=df2)
+dfs <- list(`first data frame`=df1,
+            `second data frame`=df2)
 # actually "withNames()" is superfluous ...
-dfs2xlsx(df.list, "../inst/extdata/test_two_dfs1.xlsx")
+dfs2xlsx(dfs, "../inst/extdata/test_two_dfs1.xlsx")
 
 # write one data frame into a file
 dfs2xlsx(list(`one data frame`=df1),
          "../inst/extdata/one_df.xlsx")
 
 # read-in excel file as a data frame list
-dfs.list <- xlsx2dfs("../inst/extdata/test_two_dfs1.xlsx")
+dfs <- xlsx2dfs("../inst/extdata/test_two_dfs1.xlsx")
 #+END_SRC
 
 
